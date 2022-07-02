@@ -18,7 +18,7 @@ const navigation = [
   { name: 'Team', href: '/company', current: false },
   { name: 'Projects', href: '/buildings', current: false },
   { name: 'Calendar', href: '/calendar', current: false },
-  { name: 'Material', href: '/material', current: false },
+  { name: 'Material', href: '/materials', current: false },
   { name: 'Reports', href: '/reports', current: false },
 ]
 const userNavigation = [
