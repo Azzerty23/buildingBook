@@ -23,13 +23,14 @@ import MainLayout from 'src/layouts/MainLayout'
 const Routes = () => {
   return (
     <Router>
-      <Route path="/materials" page={MaterialsPage} name="materials" />
-      <Route path="/calendar" page={CalendarPage} name="calendar" />
       <Route path="/" page={HomePage} name="home" />
       <Set wrap={MainLayout}>
         <Route path="/buildings/{id:Int}" page={BuildingBuildingPage} name="building" />
-        <Route path="/company" page={CompanyPage} name="company" />
         <Route path="/dashboard" page={DashboardPage} name="dashboard" />
+        <Route path="/company" page={CompanyPage} name="company" />
+        <Route path="/calendar" page={CalendarPage} name="calendar" />
+        <Route path="/materials" page={MaterialsPage} name="materials" />
+        <Route path="/reports" page={ReportsPage} name="reports" />
         <Set wrap={BuildingsLayout}>
           <Route path="/buildings" page={BuildingBuildingsPage} name="buildings" />
         </Set>
