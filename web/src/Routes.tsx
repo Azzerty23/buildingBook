@@ -9,13 +9,14 @@
 
 import { Set, Router, Route } from '@redwoodjs/router'
 
-import BuildingsLayout from 'src/layouts/Admin/BuildingsLayout'
+import AdminBuildingsLayout from 'src/layouts/Admin/BuildingsLayout'
 import CommentsLayout from 'src/layouts/Admin/CommentsLayout'
 import CompaniesLayout from 'src/layouts/Admin/CompaniesLayout'
 import MaterialsLayout from 'src/layouts/Admin/MaterialsLayout'
 import PostsLayout from 'src/layouts/Admin/PostsLayout'
 import TasksLayout from 'src/layouts/Admin/TasksLayout'
 import UsersLayout from 'src/layouts/Admin/UsersLayout'
+import BuildingsLayout from 'src/layouts/BuildingsLayout'
 import MainLayout from 'src/layouts/MainLayout'
 
 const Routes = () => {
@@ -23,7 +24,11 @@ const Routes = () => {
     <Router>
       <Route path="/" page={HomePage} name="home" />
       <Set wrap={MainLayout}>
+        <Route path="/buildings/{id:Int}" page={BuildingBuildingPage} name="building" />
         <Route path="/dashboard" page={DashboardPage} name="dashboard" />
+        <Set wrap={BuildingsLayout}>
+          <Route path="/buildings" page={BuildingBuildingsPage} name="buildings" />
+        </Set>
       </Set>
       <Set wrap={CommentsLayout}>
         <Route path="/admin/comments/new" page={AdminCommentNewCommentPage} name="adminNewComment" />
@@ -49,7 +54,7 @@ const Routes = () => {
         <Route path="/admin/tasks/{id:Int}" page={AdminTaskTaskPage} name="adminTask" />
         <Route path="/admin/tasks" page={AdminTaskTasksPage} name="adminTasks" />
       </Set>
-      <Set wrap={BuildingsLayout}>
+      <Set wrap={AdminBuildingsLayout}>
         <Route path="/admin/buildings/new" page={AdminBuildingNewBuildingPage} name="adminNewBuilding" />
         <Route path="/admin/buildings/{id:Int}/edit" page={AdminBuildingEditBuildingPage} name="adminEditBuilding" />
         <Route path="/admin/buildings/{id:Int}" page={AdminBuildingBuildingPage} name="adminBuilding" />

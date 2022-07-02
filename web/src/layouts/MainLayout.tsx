@@ -14,9 +14,9 @@ const user = {
     'https://www.belgium.weber/files/be/styles/640x480_resize/public/pictures/2019-01/ART_nieuw-logo-Saint-Gobain.gif?itok=cPOvzDzW',
 }
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
+  { name: 'Dashboard', href: '/dashboard', current: true },
   { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
+  { name: 'Projects', href: '/buildings', current: false },
   { name: 'Calendar', href: '#', current: false },
   { name: 'Material', href: '#', current: false },
   { name: 'Reports', href: '#', current: false },
