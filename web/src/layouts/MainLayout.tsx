@@ -201,7 +201,7 @@ const MainLayout = ({ children }: BuildingLayoutProps) => {
           )}
         </Disclosure>
 
-        <main>{children}</main>
+        <main className="container mx-auto">{children}</main>
       </div>
     </div>
   )

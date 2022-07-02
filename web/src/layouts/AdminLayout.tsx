@@ -14,8 +14,6 @@ import {
 } from '@heroicons/react/outline'
 import clsx from 'clsx'
 
-/* This example requires Tailwind CSS v2.0+ */
-
 const navigation = [
   {
     name: 'Buildings',

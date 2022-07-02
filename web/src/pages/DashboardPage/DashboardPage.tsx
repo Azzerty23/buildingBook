@@ -1,17 +1,15 @@
 // import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
+import ContentHeader from 'src/components/ContentHeader/ContentHeader'
+import Stats from 'src/components/Stats/Stats'
+
 const DashboardPage = () => {
   return (
     <>
       <MetaTags title="Dashboard" description="Dashboard page" />
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-lg leading-6 font-semibold text-gray-900">
-            Dashboard
-          </h1>
-        </div>
-      </header>
+      <ContentHeader title="Dashboard" />
+      <Stats />
       <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-4 sm:px-0">
           <div className="rounded-lg h-96">
