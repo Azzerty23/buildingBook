@@ -12,7 +12,7 @@ export const QUERY = gql`
       lastname
       email
       phone
-      roles
+      role
       companyId
       createdAt
     }

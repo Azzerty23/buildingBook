@@ -84,7 +84,7 @@ const UsersList = ({ users }) => {
             <th>Lastname</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Roles</th>
+            <th>Role</th>
             <th>Company id</th>
             <th>Created at</th>
             <th>&nbsp;</th>
@@ -98,7 +98,7 @@ const UsersList = ({ users }) => {
               <td>{truncate(user.lastname)}</td>
               <td>{truncate(user.email)}</td>
               <td>{truncate(user.phone)}</td>
-              <td>{formatEnum(user.roles)}</td>
+              <td>{formatEnum(user.role)}</td>
               <td>{truncate(user.companyId)}</td>
               <td>{timeTag(user.createdAt)}</td>
               <td>

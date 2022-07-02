@@ -15,7 +15,7 @@ export const QUERY = gql`
       lastname
       email
       phone
-      roles
+      role
       companyId
       createdAt
     }
@@ -29,7 +29,7 @@ const UPDATE_USER_MUTATION = gql`
       lastname
       email
       phone
-      roles
+      role
       companyId
       createdAt
     }
@@ -54,7 +54,9 @@ export const Success = ({ user }: CellSuccessProps<EditUserById>) => {
   })
 
   const onSave = (input, id) => {
-    const castInput = Object.assign(input, { companyId: parseInt(input.companyId), })
+    const castInput = Object.assign(input, {
+      companyId: parseInt(input.companyId),
+    })
     updateUser({ variables: { id, input: castInput } })
   }
 

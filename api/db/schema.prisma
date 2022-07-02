@@ -20,9 +20,9 @@ model User {
   lastname  String
   email     String   @unique
   phone     String
-  roles     Role     @default(PUBLIC_USER)
-  company   Company  @relation(fields: [companyId], references: [id])
-  companyId Int
+  role      Role     @default(PUBLIC_USER)
+  company   Company? @relation(fields: [companyId], references: [id])
+  companyId Int?
   Post      Post[]
   createdAt DateTime @default(now())
 }

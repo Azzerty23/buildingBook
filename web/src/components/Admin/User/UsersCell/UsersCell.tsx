@@ -13,7 +13,7 @@ export const QUERY = gql`
       lastname
       email
       phone
-      roles
+      role
       companyId
       createdAt
     }
@@ -26,10 +26,7 @@ export const Empty = () => {
   return (
     <div className="rw-text-center">
       {'No users yet. '}
-      <Link
-        to={routes.adminNewUser()}
-        className="rw-link"
-      >
+      <Link to={routes.adminNewUser()} className="rw-link">
         {'Create one?'}
       </Link>
     </div>

@@ -66,32 +66,41 @@ const User = ({ user }) => {
     <>
       <div className="rw-segment">
         <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">User {user.id} Detail</h2>
+          <h2 className="rw-heading rw-heading-secondary">
+            User {user.id} Detail
+          </h2>
         </header>
         <table className="rw-table">
           <tbody>
             <tr>
               <th>Id</th>
               <td>{user.id}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Firstname</th>
               <td>{user.firstname}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Lastname</th>
               <td>{user.lastname}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Email</th>
               <td>{user.email}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Phone</th>
               <td>{user.phone}</td>
-            </tr><tr>
-              <th>Roles</th>
-              <td>{formatEnum(user.roles)}</td>
-            </tr><tr>
+            </tr>
+            <tr>
+              <th>Role</th>
+              <td>{formatEnum(user.role)}</td>
+            </tr>
+            <tr>
               <th>Company id</th>
               <td>{user.companyId}</td>
-            </tr><tr>
+            </tr>
+            <tr>
               <th>Created at</th>
               <td>{timeTag(user.createdAt)}</td>
             </tr>

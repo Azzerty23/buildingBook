@@ -5,9 +5,9 @@ export const schema = gql`
     lastname: String!
     email: String!
     phone: String!
-    roles: Role!
-    company: Company!
-    companyId: Int!
+    role: Role!
+    company: Company
+    companyId: Int
     Post: [Post]!
     createdAt: DateTime!
   }
@@ -28,8 +28,8 @@ export const schema = gql`
     lastname: String!
     email: String!
     phone: String!
-    roles: Role!
-    companyId: Int!
+    role: Role!
+    companyId: Int
   }
 
   input UpdateUserInput {
@@ -37,7 +37,7 @@ export const schema = gql`
     lastname: String
     email: String
     phone: String
-    roles: Role
+    role: Role
     companyId: Int
   }
 
