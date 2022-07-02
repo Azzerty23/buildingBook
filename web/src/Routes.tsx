@@ -9,23 +9,18 @@
 
 import { Set, Router, Route } from '@redwoodjs/router'
 
-import CommentsLayout from 'src/layouts/Admin/CommentsLayout'
-
-import PostsLayout from 'src/layouts/Admin/PostsLayout'
-
-import MaterialsLayout from 'src/layouts/Admin/MaterialsLayout'
-
-import TasksLayout from 'src/layouts/Admin/TasksLayout'
-
 import BuildingsLayout from 'src/layouts/Admin/BuildingsLayout'
-
+import CommentsLayout from 'src/layouts/Admin/CommentsLayout'
 import CompaniesLayout from 'src/layouts/Admin/CompaniesLayout'
-
+import MaterialsLayout from 'src/layouts/Admin/MaterialsLayout'
+import PostsLayout from 'src/layouts/Admin/PostsLayout'
+import TasksLayout from 'src/layouts/Admin/TasksLayout'
 import UsersLayout from 'src/layouts/Admin/UsersLayout'
 
 const Routes = () => {
   return (
     <Router>
+      <Route path="/" page={HomePage} name="home" />
       <Set wrap={CommentsLayout}>
         <Route path="/admin/comments/new" page={AdminCommentNewCommentPage} name="adminNewComment" />
         <Route path="/admin/comments/{id:Int}/edit" page={AdminCommentEditCommentPage} name="adminEditComment" />
