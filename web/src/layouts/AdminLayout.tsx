@@ -17,12 +17,37 @@ import clsx from 'clsx'
 /* This example requires Tailwind CSS v2.0+ */
 
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-  { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-  { name: 'Teams', href: '#', icon: UserGroupIcon, current: false },
-  { name: 'Directory', href: '#', icon: SearchCircleIcon, current: false },
-  { name: 'Announcements', href: '#', icon: SpeakerphoneIcon, current: false },
-  { name: 'Office Map', href: '#', icon: MapIcon, current: false },
+  {
+    name: 'Buildings',
+    href: '/admin/buildings',
+    icon: HomeIcon,
+    current: true,
+  },
+  {
+    name: 'Calendar',
+    href: '/admin/tasks',
+    icon: CalendarIcon,
+    current: false,
+  },
+  {
+    name: 'Materials',
+    href: '/admin/materials',
+    icon: SearchCircleIcon,
+    current: false,
+  },
+  {
+    name: 'Teams',
+    href: '/admin/companies',
+    icon: UserGroupIcon,
+    current: false,
+  },
+  {
+    name: 'Announcements',
+    href: '/admin/posts',
+    icon: SpeakerphoneIcon,
+    current: false,
+  },
+  { name: 'Map view', href: '#', icon: MapIcon, current: false },
 ]
 
 // import { Link, routes } from '@redwoodjs/router'
@@ -166,9 +191,9 @@ const AdminLayout = ({ children }: BuildingLayoutProps) => {
               <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-gray-100">
                 <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
                   <div className="flex items-center flex-shrink-0 px-4">
-                    <Link to={routes.dashboard()}>
+                    <Link to={routes.dashboard()} className="mx-auto">
                       <img
-                        className="h-20 m-auto rounded-md w-auto"
+                        className="h-20 rounded-md w-auto"
                         src="https://www.belgium.weber/files/be/styles/640x480_resize/public/pictures/2019-01/ART_nieuw-logo-Saint-Gobain.gif?itok=cPOvzDzW"
                         alt="Saint Gobain"
                       />
