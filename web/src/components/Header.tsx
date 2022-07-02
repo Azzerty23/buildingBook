@@ -5,6 +5,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ChevronRightIcon } from '@heroicons/react/solid'
 
 // import { Link, routes } from '@redwoodjs/router'
+import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
 const navigation = [
@@ -85,12 +86,12 @@ const Header = () => {
                 </div>
               </div>
               <div className="hidden md:flex">
-                <a
-                  href="#"
+                <Link
+                  to={routes.dashboard()}
                   className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
                 >
                   Log in
-                </a>
+                </Link>
               </div>
             </nav>
 

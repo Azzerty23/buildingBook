@@ -16,11 +16,15 @@ import MaterialsLayout from 'src/layouts/Admin/MaterialsLayout'
 import PostsLayout from 'src/layouts/Admin/PostsLayout'
 import TasksLayout from 'src/layouts/Admin/TasksLayout'
 import UsersLayout from 'src/layouts/Admin/UsersLayout'
+import MainLayout from 'src/layouts/MainLayout'
 
 const Routes = () => {
   return (
     <Router>
       <Route path="/" page={HomePage} name="home" />
+      <Set wrap={MainLayout}>
+        <Route path="/dashboard" page={DashboardPage} name="dashboard" />
+      </Set>
       <Set wrap={CommentsLayout}>
         <Route path="/admin/comments/new" page={AdminCommentNewCommentPage} name="adminNewComment" />
         <Route path="/admin/comments/{id:Int}/edit" page={AdminCommentEditCommentPage} name="adminEditComment" />

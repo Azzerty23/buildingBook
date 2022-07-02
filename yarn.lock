@@ -9290,6 +9290,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clsx@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "clsx@npm:1.1.1"
+  checksum: 5c34e1d5623e3dce0dbf22eedd4f3cc7cd0dee6b1b1ef3ad49d042c9d86372a1dc7788c2ca3213ec08e65ad0e91572ae7cb77183a478c9977bd5327e8f43ffe5
+  languageName: node
+  linkType: hard
+
 "co@npm:^4.6.0":
   version: 4.6.0
   resolution: "co@npm:4.6.0"
@@ -21126,6 +21133,7 @@ __metadata:
     "@headlessui/react": ^1.6.5
     "@heroicons/react": ^1.0.6
     "@redwoodjs/core": 2.0.0
+    clsx: ^1.1.1
   languageName: unknown
   linkType: soft
 
