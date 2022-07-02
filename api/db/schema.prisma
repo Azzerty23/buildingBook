@@ -1,5 +1,5 @@
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -8,11 +8,92 @@ generator client {
   binaryTargets = "native"
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+enum Role {
+  PUBLIC_USER
+  CONSTRUCTOR
+  ADMIN
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  firstname String
+  lastname  String
+  email     String   @unique
+  phone     String
+  roles     Role     @default(PUBLIC_USER)
+  company   Company  @relation(fields: [companyId], references: [id])
+  companyId Int
+  Post      Post[]
+  createdAt DateTime @default(now())
+}
+
+model Company {
+  id        Int        @id @default(autoincrement())
+  name      String
+  type      String
+  User      User[]
+  Buildings Building[]
+  createdAt DateTime   @default(now())
+}
+
+model Building {
+  id           Int       @id @default(autoincrement())
+  name         String
+  stakeholders Company[]
+  Post         Post[]
+  createdAt    DateTime  @default(now())
+}
+
+model Task {
+  id          Int        @id @default(autoincrement())
+  name        String
+  type        String
+  start_date  DateTime
+  end_date    DateTime
+  materials   Material[]
+  successorId Int?       @unique
+  successor   Task?      @relation("TaskDependency", fields: [successorId], references: [id])
+  predecessor Task?      @relation("TaskDependency")
+  createdAt   DateTime   @default(now())
+}
+
+enum MaterialStatus {
+  TO_ORDER
+  DELIVERING
+  DELIVERED
+}
+
+model Material {
+  id                     Int            @id @default(autoincrement())
+  name                   String
+  type                   String
+  quantity               Int
+  unit                   String
+  status                 MaterialStatus @default(TO_ORDER)
+  price                  Int
+  expected_delivery_date DateTime?
+  delivery_date          DateTime?
+
+  Task      Task?    @relation(fields: [taskId], references: [id])
+  taskId    Int?
+  createdAt DateTime @default(now())
+}
+
+model Post {
+  id         Int       @id @default(autoincrement())
+  content    String
+  author     User      @relation(fields: [userId], references: [id])
+  building   Building  @relation(fields: [buildingId], references: [id])
+  buildingId Int
+  userId     Int
+  Comment    Comment[]
+  createdAt  DateTime  @default(now())
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  post      Post     @relation(fields: [postId], references: [id])
+  postId    Int
+  createdAt DateTime @default(now())
 }
