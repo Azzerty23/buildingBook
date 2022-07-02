@@ -1,44 +1,69 @@
+import { Link, routes } from '@redwoodjs/router'
+
 export default () => (
-  <main>
-    <style
-      dangerouslySetInnerHTML={{
-        __html: `
-              html, body {
-                margin: 0;
-              }
-              html * {
-                box-sizing: border-box;
-              }
-              main {
-                display: flex;
-                align-items: center;
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-                text-align: center;
-                background-color: #E2E8F0;
-                height: 100vh;
-              }
-              section {
-                background-color: white;
-                border-radius: 0.25rem;
-                width: 32rem;
-                padding: 1rem;
-                margin: 0 auto;
-                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-              }
-              h1 {
-                font-size: 2rem;
-                margin: 0;
-                font-weight: 500;
-                line-height: 1;
-                color: #2D3748;
-              }
-            `,
-      }}
-    />
-    <section>
-      <h1>
-        <span>404 Page Not Found</span>
-      </h1>
-    </section>
-  </main>
+  <div className="min-h-full pt-16 pb-12 flex flex-col bg-white">
+    <main className="flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex-shrink-0 flex justify-center">
+        <a href="/" className="inline-flex">
+          <span className="sr-only">Workflow</span>
+          <img
+            className="h-12 w-auto"
+            src="https://tailwindui.com/img/logos/workflow-mark.svg?color=teal&shade=600"
+            alt=""
+          />
+        </a>
+      </div>
+      <div className="py-16">
+        <div className="text-center">
+          <p className="text-sm font-semibold text-primary-600 uppercase tracking-wide">
+            404 error
+          </p>
+          <h1 className="mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
+            Page not found.
+          </h1>
+          <p className="mt-2 text-base text-gray-500">
+            Sorry, we couldn’t find the page you’re looking for.
+          </p>
+          <div className="mt-6">
+            <Link
+              to={routes.home()}
+              className="te‡xt-base font-medium text-primary-600 hover:text-primary-500"
+            >
+              Go back home<span aria-hidden="true"> &rarr;</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer className="flex-shrink-0 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="flex justify-center space-x-4">
+        <a
+          href="#"
+          className="text-sm font-medium text-gray-500 hover:text-gray-600"
+        >
+          Contact Support
+        </a>
+        <span
+          className="inline-block border-l border-gray-300"
+          aria-hidden="true"
+        />
+        <a
+          href="#"
+          className="text-sm font-medium text-gray-500 hover:text-gray-600"
+        >
+          Status
+        </a>
+        <span
+          className="inline-block border-l border-gray-300"
+          aria-hidden="true"
+        />
+        <a
+          href="#"
+          className="text-sm font-medium text-gray-500 hover:text-gray-600"
+        >
+          Twitter
+        </a>
+      </nav>
+    </footer>
+  </div>
 )
